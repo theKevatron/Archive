@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+	<style> 
+		header {
+			width: 100%;
+			height: 200px;
+			background-color: #34ebd3;
+			padding: 1em; 
+		}
+		footer {
+			width: 100%;
+			height: 200px;
+			background-color: #34ebd3;
+			padding: 1em;
+		}
+		main {
+			width: 60%;
+			margin-right: 20%;
+			margin-left: 20%;
+			min-height: calc(100vh - 400px);
+			background-color: #dc34eb;
+		}
+		aside {
+			position: absolute;
+			width: 20%;
+			top: 0px;
+		}
+		aside:first-child {
+			left: 0px
+		}
+		aside:last-child {
+			right: 0px
+		}	
+		#content {
+			position: relative;
+		}
+		body {
+			margin: 0px;
+			padding: 0em;
+		} 
+	</style>
+</head>
+<body> 
+	<header><h1>HEADER</h></header>
+	<div id="content">
+		<aside>ASIDE</aside>
+		<main>MAIN</main>
+		<aside>ASIDE</aside>
+	</div>
+	<footer><p>FOOTER</p></footer>
+</body>
+</html>
