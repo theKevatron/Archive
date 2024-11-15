@@ -1,0 +1,50 @@
+﻿// AVERAGE CALCULATOR
+// Counts unspecified number of positive/negative integers, computes the total/average, and displays average as a float. End with input 0.
+
+Class CalculateAverage
+
+	Module main()
+		//Declare the necessary variables
+        	//Positive number counter
+        	Int positive = 0;
+        	//Negative number counter
+        	Int negative = 0;
+        	//Counter for all numbers, used to calculate the average
+        	Int count = -1;
+        	//Total variable used to store the sum of all numbers entered
+        	Float total = 0;
+        	//Number variable used to store user input
+        	Float number;
+        	//Average variable used to calculate the average of all numbers entered
+        	Float average;
+        
+        	//Do-while statement to gather user input and increment certain variables while the input value is not equal to 0
+                Do 
+			Input number
+                	//Add the new number to the total
+                	total += number
+                        //Increment the counter every time a new number is typed
+                        count++
+                        //If the number is a negative, increment the negative count
+                        If (number > 0)
+                        	positive++
+                        //If the number is a negative, increment the negative count
+                        Else If(number < 0)
+                        	negative++
+                        End If
+		While (number != 0)
+        	End Do While
+
+        	//Display the average
+        	average = total / count;
+        	//Display the positives
+        	Display "The number of positives is "+ positive
+        	//Display the negatives
+        	Display "The number of negatives is "+ negative
+        	//Display the total/sum
+        	Display "The total is "+ total
+        	//Display the average
+		Display "The average is "+ average
+	End Module
+
+End Class

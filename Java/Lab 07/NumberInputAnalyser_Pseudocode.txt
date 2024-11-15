@@ -1,0 +1,68 @@
+﻿// NUMBER INPUT ANALYZER
+// Allows a user to enter any number of double values up to 20 into an array.  Users should enter 99999 to quit entering numbers. Displays an error message if the user quits without entering any numbers; otherwise, displays each entered value and its distance from the average.
+
+Class NumberInputAnalyser
+
+	Module main ()
+        	//Declare array
+		Double[] numbers = new Double[20];
+		//Declaring input variable
+        	Double number;
+        	//Declare i to control while loop
+        	Int i = 1;
+        	//Declare i to control for loop
+        	Int j = 0;
+        	//Declare count to calculate number of elements in array
+        	Double count = 1;
+        	//Declare sum to calculate sum
+        	Double sum = 0;
+        	//Declare average to calculate average
+        	Double average;
+              
+        	//Defining user input and break value
+		Display "You can enter up to 20 double values(Enter 99999 to stop user input)."        
+		Display "Enter Number: "
+        	Input number
+
+
+        	//If statement to display error message if only "99999" was entered
+        	If(number == 99999)
+                	Display "You cannot quit without entering any numbers. Please enter at least one number."
+        	End If
+
+
+        	//While loop to gather user input up to 20 numbers
+        	While(number != 99999 && i < numbers.length)
+                	numbers[i] = number
+                    	//Finding sum of all numbers in array to calculate average later
+                        sum = sum + number
+                        Display  "Enter Number: "
+                        Input number
+
+                        //If statement to break if "99999" is entered
+                        If(number == 99999)
+				Break
+                	End If
+
+                        //Increment i and count for every number added to array
+                        i++
+                        count++
+		End While              
+              
+        	//Equation to calculate average
+        	average = sum / count
+
+
+        	//Print header
+        	Display "Number   Distance from average"
+
+
+        	//For loop to display numbers in array and distance from average
+		For (j = 1; j < i+1; ++j)
+			//Math.abs() equation to calculate distance from average as a positive number
+                	Double distance = Math.abs(numbers[j] - average)
+                        Display numbers[j] + "      " + distance
+		End For
+	End Module
+
+End Class

@@ -1,0 +1,32 @@
+﻿// COST CALCULATOR
+// This is a Java program that prompts the user to enter the distance to drive, the fuel efficiency of the car in miles per gallon, and the price per gallon, and displays the cost of the trip.
+
+Class CostCalculator
+
+	Module main()
+		//Declare the necessary variables
+		Double distance
+		Double milespg
+		Double pricepg
+		Double total
+
+		//Store user input in variable “distance”
+		Display “Please enter the distance in miles: “
+		Input distance
+
+		//Store user input in variable “milespg”
+		Display “Please enter the miles per gallon “
+		Input milespg
+
+		//Store user input in variable “pricepg”
+		Display “Please enter the price per gallon “
+		Input pricepg
+
+		//Store equation to calculate the cost of driving in variable “total”
+		Set total = (distance/milespg) * pricepg
+
+		//Display the end result of equation in variable “total”
+		Display “The cost of driving is $”, total
+	End Module
+
+End Class

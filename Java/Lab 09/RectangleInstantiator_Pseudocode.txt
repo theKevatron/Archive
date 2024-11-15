@@ -1,0 +1,61 @@
+﻿// CUSTOM RECTANGLE CLASS
+// This program defines a class to represent a rectangle.
+// This Class contains: 
+// Two “double” data fields named “width” and “height” whose default values are 1
+// A no-arg constructor that creates a default rectangle
+// A constructor that creates a rectangle with the specified width and height
+// A method named getArea() that returns the area of this rectangle
+// A method named getPerimeter() that returns the perimeter of this rectangle
+
+Class RectangleTest
+
+	Module main ()
+        	//Creating object/instance of rectangle1
+        	Rectangle rectangle1 = new Rectangle()
+        	//Call getArea() method and getPerimeter() method and display
+        	Display "The area of rectangle 1 is " + rectangle1.getArea() + ", and the perimeter is " +rectangle1.getPerimeter()
+        
+        	//Creating object/instance of rectangle2 
+        	Rectangle rectangle2 = new Rectangle(2, 3)
+        	//Call getArea() method and getPerimeter() method and display
+        	Display "The area of rectangle 2 is " + rectangle2.getArea() + ", and the perimeter is " + rectangle2.getPerimeter()
+	End Module
+
+End Class
+
+
+
+
+//Rectangle Class
+Class Rectangle
+
+
+//Two data fields of the rectangle class
+Double width = 1
+Double height = 1
+
+
+//Default/no-arg constructor
+//Constructs a rectangle with a width and height of 1
+Constructor Rectangle()
+                width = 1
+                height = 1
+End Constructor
+        
+//Constructs a rectangle with a specified width and height
+Constructor Rectangle(Double newWidth, Double newHeight)
+                width = newWidth
+                height = newHeight
+End Constructor
+        
+//Function to get the area of the rectangle
+Function Double getArea(Double width, Double height)
+                Return (width * height)
+End Function
+        
+//Function to get the perimeter of the rectangle
+Function Double getPerimeter(Double width, Double height)
+                Return (width * 2) + (height * 2)
+        End Function
+        
+End Class Rectangle

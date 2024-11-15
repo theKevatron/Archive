@@ -1,0 +1,62 @@
+﻿// SORT LIST ASCENDING
+// Prompts the user to enter 10 numbers and loads all the numbers into a Java ArrayList. Sorts the array in ascending order and displays all values including the smallest, the largest, the sum, and the average values.
+
+Class SortListAscending
+
+	Module main ()
+        	//Declare sum variable to store sum of all numbers 
+		Double sum = 0
+        
+		//Defining user input
+		Display ""You will enter 10 numbers that will be stored in an array. "
+
+		//Defining array name, variable type, and array size
+		Double[] numbers = new Double [10]
+
+		//For loop that gathers user input for each index of the array
+		For (int i = 0; i < 10; i++)
+                	//Displays where user input in going
+                        Display "Enter Number " + (i+1) + ": "
+                        Input numbers[i]
+                	//Equation that calculates the sum of all numbers in array as they are input
+                	sum += numbers[i]
+        	End For
+        
+		//For loop that calculates the highest number in the array
+		Double max = numbers[0]
+		For (int i = 1; i < 10; i++)
+			If (numbers[i] > max) 
+				//Make max equal to the highest number in the array
+				max = numbers[i]
+			End If
+        	End For
+        
+		//For loop that calculates the lowest number in the array
+		Double min = numbers[0]
+		For (int i = 1; i < 10; i++) 
+			If (numbers[i] < min) 
+                                //Make min equal to the lowest number in the array
+                                min = numbers[i]
+               		End If
+        	End For
+        
+                //Calculates the average using the sum and array length
+                Double average = sum / 10
+        
+                //Sort array using java.util.Arrays;
+                java.util.Arrays.sort(numbers);
+        
+                //Loops through the array to print out each value in the array
+                Display "Sorted List"
+                For (int i = 0; i < numbers.length; i++)
+                        Display numbers[i] + " "
+        	End For
+
+                //Prints out the stored variables: max, min, sum, and average
+                Display "Largest = " + max
+                Display "Smallest = " + min
+                Display "Sum = " + sum
+                Display "Average = " + average
+	End Module
+
+End Class

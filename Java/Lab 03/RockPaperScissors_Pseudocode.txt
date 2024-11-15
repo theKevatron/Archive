@@ -1,0 +1,62 @@
+﻿// ROCK PAPER SCISSORS
+// Simulates a game of rock, paper, scissors. Randomly generates a number 0, 1 or 2 that is a representation of rock, paper, or scissors respectively. Prompts the user to enter a number 0, 1 or 2 and displays a message indicating whether the user or the computer wins, loses, or draws.
+
+Class RockPaperScissors
+
+	Module main()
+		//Declare the necessary variables
+        	String user
+        	String computer
+        	Int randomInt
+
+        	//Define user input and store user input as variable “user”
+        	Display “ Please choose one of the three options: R = Rock, P = Paper  and S = Scissors.’
+        	Display "Enter your play:”
+        	Input user
+
+        	//Generate a random number out of 0,1, or 2
+        	randomInt = (int)(Math.random() * 3)
+
+        	//Use random number generated above to assign the computer a move using “if” statements
+        	If (randomInt == 0) 
+                	computer = "R"
+        	Else if (randomInt == 1) 
+                	computer = "P"
+        	Else if (randomInt == 2) 
+                	computer = "S"
+        	End If
+        
+        	//Print computer's move
+        	Display “Computer play is:” + computer
+
+        	Determine the winner based on inputs from both sources, and make a case for each scenario
+        	//If statement for if there is R-R, P-P, S-S
+        	If user = computer 
+                	Display “You both chose the same move, it's a tie!”
+        	//If statement for if the is R-S or R-P
+		Else if user = “R” 
+                	If computer = “S”
+				Display “Rock beats scissors. You win!”
+                 	Else if computer = “P” 
+                            	Display “Paper beats rock. Computer wins!”
+                 	End if
+		//If statement for if the is P-S or P-R
+        	Else if user = “P”
+			If computer = “S” 
+				Display “Scissor beats paper. Computer wins!”
+			Else if computer “R” 
+                        	Display “Paper beats rock. You win!!”
+                	End if
+		//If statement for if the is S-P or S-R
+		Else if user = “S”
+                	If computer = “P” 
+				Display “Scissor beats paper. You win!”
+			Else if computer = “R” 
+				Display “Rock beats scissors. Computer wins!”
+			End if
+		//If statement for if the program fails/user input is not accepted
+		Else 
+			Display “Invalid user input.”
+	End Module
+
+End Class Lab 3

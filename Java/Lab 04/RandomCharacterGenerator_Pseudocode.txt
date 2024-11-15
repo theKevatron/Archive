@@ -1,0 +1,20 @@
+﻿// RANDOM CHARACTER GENERATOR
+// This is a Java program that displays a random uppercase letter using the “Math.random()” method
+
+Class RandomCharacterGenerator
+
+	Module main()
+		//Declare the necessary variables
+        	Int integerValue
+        	Char letter
+        
+        	//Generate a random number from 65 to 90
+        	integerValue = (int)(Math.random() * (91 - 65) + 65);
+                
+        	//Convert int value to char variable so the randomly generated number can be used to print out an ASCII character from A(65) to Z(90)
+        	letter = (char)integerValue;
+                
+        	Display “Randomly generated letter is: “ + letter
+	End Module
+
+End Class

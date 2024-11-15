@@ -1,0 +1,40 @@
+﻿// WORD COUNTER
+// Counts the number of words in specified text
+
+Class WordCounter
+
+	Module main()
+       		//Define user input
+        	Display "Please enter some text to find out how many words are in it: "
+        
+        	//Stores user input into a string
+        	String text
+        	Input text
+        
+        	//Converts string to character array
+        	//to work with individual characters
+        	char[] cText = text.toCharArray()
+        
+        	//Counter to keep track of number of words
+        	Int words = 0
+                
+		//Calculates the number of words in the string
+        	If (Character.isLetter(cText[0]))
+                	words++
+        	End If
+
+
+        	//For loop to loop through the string
+        	For (i = 1; i < text.length(); i++)
+			//Increments "words" if an alphabetic character is found
+			//and the index behind it is not an alphabetical character
+			If (Character.isLetter(cText[i]) && (!Character.isLetter(cText[i - 1])))
+				words++
+			End If 
+        	End For
+
+        	//Print out the number of words counted
+        	Display "There is " + words + " words in this text."
+	End Module
+
+End Class

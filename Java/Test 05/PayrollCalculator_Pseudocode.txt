@@ -1,0 +1,130 @@
+﻿// PAYROLL CALCULATOR
+// Contains a class “Payroll” that has private data members for an employee's full name, hourly rate  pay, number of hours worked, and total pay for the weekDefault constructor that sets the name to blank, and zeros to other values. 
+// This class contains:
+// A constructor that takes employee’s name, hourly rate and hours worked
+// A constructor that takes the employee's name only
+// get() and set() methods for hourly rate, hours worked and employee’s name
+// computePay() method that calculates the payment
+// toString() method that prints all information to two decimal places
+
+Class PayrollCalculator
+
+	Module main()
+        	//Class array
+        	Payroll [] employee = new Payroll[5]
+        	//Constructor taking name, hourly rate, and hours
+        	employee[0] = new Payroll("John Kit", 14.68, 33)
+        	//Constructor taking name only
+        	employee[1] = new Payroll("Andrew Jack");
+        	//Constructor setting default values
+        	employee[2] = new Payroll();
+        	employee[3] = new Payroll("Michael Peterson", 16.25, 25);
+        	employee[4] = new Payroll("Anna Watson", 15.56, 28);
+        
+        	//Calling .set() methods for employee 3
+        	employee[2].setName("Katy Tommers")
+        	employee[2].setHourlyRate(15.21)
+        	employee[2].setHoursWorked(31)
+        
+        	//Calculate gross pay
+        	employee[0].computePay()
+        	employee[1].computePay()
+        	employee[2].computePay()
+        	employee[3].computePay()
+        	employee[4].computePay()
+        
+        	//Calling .get() methods for employee 3
+        	Display “Employee 3:”
+        	Display “Name: " + employee[2].getName() + "  Hourly Rate: $" + employee[2].getHourlyRate() + "  Hours:" + employee[2].getHoursWorked()”
+
+        	//Calling .computePay() method to calculate gross pay for employee
+        	Display “Employee 1:”
+        	Display “Gross Pay: $" + employee[0].computePay()”
+        	//Calling .toString() method to display all employee information
+        	Display “"Employee 4:”
+        	Display “All Information: " + employee[3].toString()”
+        
+        	//Displaying all employee information to show that all methods/constructors work
+        	Display “All Employee Information: "
+        	Display “employee[0].toString()”
+        	Display “employee[1].toString()”
+        	Display “employee[2].toString()”
+        	Display “employee[3].toString()”
+        	Display “employee[4].toString()”
+	End Module
+
+End Class
+
+//Payroll Class
+Class Payroll {
+
+        //Four data fields of the Payroll class
+        Private String name
+        Private Double hourlyRate
+        Private Double hoursWorked
+        Private Double payment
+        
+        //Default/no-arg constructor
+        //Constructor that sets name blank and hourly rate and hours worked equal to 0
+        Constructor Public Payroll() {
+                name = ""
+                hourlyRate = 0
+                hoursWorked = 0
+        End Constructor
+        
+        //Constructor that takes employee's name, hourly rate, and hours worked
+         Constructor Public Payroll(String newName, double newHourlyRate, double newHoursWorked) {
+                name = newName
+                hourlyRate = newHourlyRate
+                hoursWorked = newHoursWorked
+        End Constructor
+        
+        //Constructor that only takes' employees name
+        Constructor Public Payroll(String newName) {
+                name = newName
+                hourlyRate = 0
+                hoursWorked = 0
+        End Constructor
+        
+        //Function to get name
+        Function Public String getName()
+                Return name
+        End Function
+        
+        //Function to get hourly rate
+        Function Public Double getHourlyRate()
+                Return hourlyRate
+        End Function
+        
+        //Function to get hours worked
+        Function Public Double getHoursWorked()
+                Return hoursWorked
+        End Function
+        
+        //Function to set name
+        Function Public void setName(String newName)
+                name = newName
+        End Function
+
+        //Function to set hourly rate
+        Function Public void setHourlyRate(double newHourlyRate)
+                hourlyRate = newHourlyRate
+        End Function
+
+        //Function to set hours worked
+        Function Public void setHoursWorked(double newHoursWorked)
+                hoursWorked = newHoursWorked
+        End Function
+                
+        //Function to calculate gross pay of employee
+        Function Public Double computePay()
+                payment = hourlyRate * hoursWorked
+                Return payment
+        End Function
+        
+        //Function to print all employee information
+        Function Public String toString()
+                Return "Name: " + name + "  Hourly Rate: $" + hourlyRate + "  Hours: " + hoursWorked + "  Gross Pay: $" + payment
+        End Function
+
+End Class

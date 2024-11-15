@@ -1,0 +1,21 @@
+﻿// ERROR HANDLING
+// Causes the JVM to throw an OutOfMemoryError, then catches and handles it by displaying an error message. We then print outside of the "try/catch" methods to verify the system continues running.
+
+Class ErrorHandling
+
+	Module main()                
+		//Throw OutOfMemoryError()
+        	Try 
+                	Throw New OutOfMemoryError()
+        	End Try
+        
+        	//Catch OutOfMemoryError exception
+        	Catch (OutOfMemoryError ex)
+                	Display "Out of memory error occurred"
+        	End Catch
+
+        	//Verify System continues
+        	Display "System continuing"
+	End Module
+
+End Class

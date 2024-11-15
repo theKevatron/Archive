@@ -1,0 +1,54 @@
+﻿// HEX/BINARY CONVERTER
+// Prompts the user to enter a hex digit and displays its corresponding binary number.
+
+Class HexBinaryConverter
+
+	Module main()
+        	//Declare the necessary variables
+        	String hexDigit
+        	//Declare value variable to be used later for converting decimal to binary number
+        	Int value = 0
+
+		//Define/gather user input 
+        	Display "Enter a hex digit: "
+        	Input hexDigit
+                
+                //If statement to check if the hex digit is only one digit long
+                If hexDigit != 1 
+                        Display hexDigit + " is an invalid input. You may only enter one hex digit."
+                End If
+                
+        	//Convert hexDigit to char
+        	char ch = hexDigit
+                
+                //Convert character to an integer
+                If ('A' <= ch && ch <= 'F') 
+                        value = ch - 'A' + 10
+                Else If (Character.isDigit(ch))
+                        value = ch
+                //Invalid input statement
+                Else
+                        Display ch + " is an invalid input"
+                End If
+                
+        	//An array to store digits of binary number
+        	Int[] binaryNum = new int[32]
+                
+		//Declare i to use as counter                 
+        	Int i = 0
+
+                //While loop used to calculate digits of binary number
+                While (value > 0)
+                	//Store remainder in array
+                        binaryNum[i] = value % 2
+                        value = value / 2
+                        i++        
+                End While
+                         
+		//Print out array in reverse order to show binary number correctly
+        	For (Int j = i - 1; j >= 0; j--)
+                	Display binaryNum[j]
+		End For
+	End Module
+
+End Class

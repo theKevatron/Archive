@@ -1,0 +1,35 @@
+﻿// CELSIUS/FAHRENHEIT CONVERTER
+// Converts celsius to fahrenheit(and vice versa). Displays results in a table with each value being displayed up to 2 decimal places.
+
+Class CelsiusFahrenheitConverter
+
+	Module main ()
+	//Print out table heading
+        	Display "Celsius      Fahrenheit   |   Fahrenheit     Celsius"
+        	//Listing for 40-30 degrees celsius and 120-30 degrees fahrenheit
+                //Decrementing by 1 for celsius and by 10 for fahrenheit
+                For (int c = 40, f = 120, c >= 30 && f >= 30, c--, f -= 10) 
+                	//Variables to store converted values
+                        double cF = celsiusToFahrenheit(c)
+                        double fC = fahrenheitToCelsius(f)   
+                 
+                        //Print out the values in a table format
+                        Display c + "                " + cF;
+                        Display "   |   "
+                        Display f + "                  "+  fC
+                End For
+	End Module
+
+	//Function to convert celsius to fahrenheit
+	Function celsiusToFahrenheit(double celsius)
+        	double f = (9.0 / 5) * (celsius + 32)
+        	return f
+	End Function
+
+	//Function to convert fahrenheit to celsius
+	Function fahrenheitToCelsius(double fahrenheit)
+        	double c = (5.0 / 9) * (fahrenheit - 32)
+        	return c
+	End Function
+
+End Class

@@ -1,0 +1,33 @@
+﻿// CASH REGISTER
+// Prompts the user for the number of eggs in an order, calculates the cost based on bundle price and individual price, then displays the amount owed.
+
+Class CashRegister
+
+	Module main()
+        	//Declare the necessary variables
+        	Int totalEggs
+        	Int dozens
+        	Int singles
+        	Double dozenPrice
+        	Double singlePrice
+        	Double total
+
+        	//Store user input as variable “totalEggs”
+        	Display “Enter the amount of eggs you would like to order: ”
+        	Input totalEggs
+        
+        	//Calculate the number of dozens 
+        	Set dozens = totalEggs / 12
+        	//Calculate the number of singles
+        	Set singles = totalEggs % 12
+        	//calculate the price for the amount of dozens 
+        	Set dozenPrice = dozens * 3.25
+        	//Calculate the price for the amount of singles
+        	Set singlePrice = singles * 0.45
+        	//Add the dozen price and single price to find the total price
+        	Set total = dozenPrice + single Price
+        	//Display the total
+        	Display total
+	End Module
+
+End Class

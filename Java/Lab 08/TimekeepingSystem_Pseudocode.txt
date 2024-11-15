@@ -1,0 +1,62 @@
+﻿// TIMEKEEPING SYSTEM
+// Stores weekly hours for employees in a two-dimensional array, where each row records an employee’s seven-day work hours with seven columns. Displays employees and their total hours in decreasing order of the total hours. 
+
+Class TimekeepingSystem
+
+	Module main()
+        	//Two-dimensional array to store all hours of all employees
+        	Int[][] twoDArray = new int[8][7]
+        
+        	//Array to store TOTAL HOURS worked for EACH employee during the week
+        	Int[] totalHours = new int [8]
+        
+        	//Array to store days of the week
+        	String[] daysOfTheWeek = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}
+        
+        	//Array to store employee names
+        	String employees[] = new String[8]
+        
+        	//For loop to gather employee names
+        	For (int i = 0; i < 8; i++)
+                	Display "Enter the name of Employee: "
+                        Input employees[i]
+			//For loop to gather hours worked each day for each employee
+                	For (int j = 0; j < 7; j++) {
+                        	Display "Enter hours on " + daysOfTheWeek[j] + ": "
+                        	Input twoDArray[i][j]
+                	End For
+        	End For
+                
+        	//For loop which calculates the total number of hours worked for each row(each employee)
+        	For (int i = 0; i < 8; ++i)
+                	totalHours[i] = twoDArray[i][0] + twoDArray[i][1] + twoDArray[i][2] + twoDArray[i][3] + twoDArray[i][4] + twoDArray[i][5] + twoDArray[i][6]
+        	End For
+        
+        	//Bubble sort to sort employee hours and names in descending order
+        	Boolean needNextPass = true
+        	For (int k = 1; k < 8 && needNextPass; k++)
+                	// Array may be sorted and next pass not needed
+                	needNextPass = false
+                	For (int i = 0; i < 8 - k; i++)
+                        	If (totalHours[i] < totalHours[i + 1])
+                                	// Swap totalHours[i] with with totalHours[i + 1]
+                                	Int x = totalHours[i]
+                                	totalHours[i] = totalHours[i + 1]
+                                	totalHours[i + 1] = x
+                                	// Swap employees[i] with with employees[i + 1]
+                                	String y = employees[i]
+                                	employees[i] = employees[i + 1]
+                                	employees[i + 1] = y
+                                	needNextPass = true
+                        	End If
+                	End For
+        	End For
+                
+        	//For loop to display "employees" array and "totalHours" array after being sorted
+        	Display "Employee details after sorting: "
+        	For (int i = 0; i < totalHours.length; ++i) 
+                	Display "Employee: " + employees[i] + " hours: " + totalHours[i]
+        	End For
+	End Module
+
+End Class

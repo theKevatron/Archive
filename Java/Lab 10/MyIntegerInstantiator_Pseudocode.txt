@@ -1,0 +1,171 @@
+﻿// CUSTOM INTEGER CLASS
+// This program defines a class to represent a specified integer.
+// This Class contains: 
+// An int data field named value
+// A constructor that creates a MyInteger object for the specified int value
+// A getter method that returns the int value
+// The methods isEven(), isOdd(), and isPrime() that return true is the specified value is even, odd, or prime respectively
+// The static methods isEven(int), isOdd(int), and isPrime(int) that return true is the specified value is even, odd, or prime respectively
+// The static methods isEven(MyInteger), isOdd(MyInteger), and isPrime(MyInteger) that return true is the specified value is even, odd, or prime respectively
+// The methods equals(int) and equals(MyInteger) that return true if the value in this object is equal to the specified value
+// A static method parseInt(char[]) that converts an array of numeric characters to an int value
+// A static method parseInt(String) that converts a string into an int value
+
+Class MyIntegerInstantiator
+
+	Module main ()
+	//Declare objects of the MyInteger class and use MyInteger() constructor
+        	MyInteger object0 = new MyInteger(22)
+        	MyInteger object1 = new MyInteger(22)
+        	MyInteger object2 = new MyInteger(23)
+        	String object3 = "24"
+        	char[] object4 = {'1', '2'}
+        	//Using getValue() function
+        	Display "Object 0 Value: " + object0.getValue()
+        	Display "Object 1 Value: " + object1.getValue()
+        	Display "Object 2 Value: " + object2.getValue()
+        	//Using isEven() functions
+        	Display "Object 0 is even: " + object0.isEven()
+        	Display "Object 1 is even: " + object1.isEven()
+        	Display "Object 2 is even: " + object2.isEven()
+        	//Using isOdd() functions
+        	Display "Object 0 is odd: " + object0.isOdd()
+        	Display "Object 1 is odd: " + object1.isOdd()
+        	Display "Object 2 is odd: " + object2.isOdd()
+        	//Using isPrime() functions
+        	Display "Object 0 is prime: " + object0.isPrime()
+        	Display "Object 1 is prime: " + object1.isPrime()
+        	Display "Object 2 is prime: " + object2.isPrime()
+        	//Using equals() functions
+        	Display "Object 1 is equal to 22: " + object1.equals(22)
+        	Display "Object 1 is equal to Object 0: " + object1.equals(object0)
+        	//Using parseInt() functions
+        	Display "Object 3: " + MyInteger.parseInt(object3)
+        	Display "Object 4: " + MyInteger.parseInt(object4)
+	End Module
+
+End Class
+
+
+Class MyInteger ()
+
+	//Declare attribute "value" for the MyInteger class
+        Private Int value
+
+        //Constructor that sets specified value
+        Constructor MyInteger(Int newValue)
+                value = newValue
+        End Constructor
+
+        //Function to get the value of "value" variable
+        Function Public Int getValue()
+                Return value
+        End Function
+
+        //isEven() function to return "true" if the objects "value" is even
+        Function Public Boolean isEven()
+                If ((value % 2) == 0)
+                        Return True
+                Else
+                        Return False
+                End If
+        End Function
+
+        //isOdd() function to return "true" if the objects "value" is odd
+        Function Public Boolean isOdd()
+                If ((value % 2) == 1)
+                        Return True
+                Else
+                        Return False
+                End If
+        End Function
+
+        //isPrime() function to return "true" if the objects "value" is prime
+        Function Public Boolean isPrime()
+                If (value == 2)
+                        Return True
+                End If
+                For (int i = 2; i <= value / 2; i++)
+                        If (value % i == 0) 
+                                Return False
+                        End If
+                End For
+                Return True
+        End Function
+
+        //isEven(int) static function to return "true" if the number entered is even
+        Function Public Static Boolean isEven(Int tValue)
+                If ((tValue % 2) == 0)
+                        Return True
+                Else
+                        Return False
+                End If
+	End Function
+
+        //isOdd(int) static function to return "true" if the number entered is odd
+        Function Public Static Boolean isOdd(Int tValue)
+                If ((tValue % 2) == 1)
+                        return true
+                Else
+                        return false
+                End If
+        End Function
+
+        //isPrime(int) static function to return "true" if the number entered is prime
+        Function Public Static Boolean isPrime(Int tValue)
+                If (tValue == 2)
+                        Return True
+                End If
+                For (Int i = 2; i <= tValue / 2; i++)
+                        If (tValue % i == 0) 
+                                Return False
+                        End if
+                End For
+                Return True
+        End Function
+
+        //isEven(MyInteger) static function to return "true" if the objects "value" is even
+        Function Public Static Boolean isEven(MyInteger oValue)
+                Return oValue.isEven()
+        End Function
+
+        //isOdd(MyInteger) static function to return "true" if the objects "value" is odd
+        Function Public Static Boolean isOdd(MyInteger oValue)
+                Return oValue.isOdd()
+        End Function
+
+        //isPrime(MyInteger) static function to return "true" if the objects "value" is prime
+        Function Public Static Boolean isPrime(MyInteger oValue)
+                Return oValue.isPrime()
+        End Function
+
+        //equals(int) function to return "true" is the object's "value" is equal to the integer entered
+        Function Public Boolean equals(Int tValue)
+                If (value == tValue)
+                        Return True
+                Else
+                        Return False
+                End If
+        End Function
+        
+        //equals(int) function to return "true" is the both objects "value" attribute are the same value
+        Function Public Boolean equals(MyInteger oValue)
+                If (oValue.value == this.value)
+                        Return True
+                Else
+                        Return False
+        End Function
+
+        //parseInt(char[]) function to convert a character array containing a numerical values into an integer
+        Function Public Static Int parseInt(char[] array)
+                Int sValue = Integer.parseInt(new String(array))
+                Return sValue
+        End Function
+
+        //parseInt(String) function to convert a string into an integer
+        Function Public Static Int parseInt(String string)
+                Int sValue = Integer.parseInt(string)
+                Return sValue
+        End Function
+
+End Class MyInteger
