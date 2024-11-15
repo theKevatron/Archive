@@ -1,0 +1,27 @@
+<!--
+   New Perspectives on XML
+   Tutorial 2
+   Case Problem 1
+
+   Catalog of photos from the Our Lady of Bergen Historical Society
+   Filename:         photos.dtd
+   Supporting File:  photos.xml
+-->
+<!ELEMENT catalog (photo+)>
+<!ATTLIST catalog type NMTOKEN #REQUIRED>
+
+<!ELEMENT photo (name, description, date, images?)>
+<!ATTLIST photo cid ID #REQUIRED>
+<!ATTLIST photo donatedBy CDATA #IMPLIED>
+
+<!ELEMENT name (#PCDATA)>
+<!ATTLIST name metadata NMTOKENS #REQUIRED>
+
+<!ELEMENT description(#PCDATA)>
+
+<!ELEMENT date (#PCDATA)>
+
+<!ELEMENT images (img+)>
+
+<!ELEMENT img EMPTY>
+<!ATTLIST img src CDATA #REQUIRED>
