@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<!-- 
+   New Perspectives on XML
+   Tutorial 4
+   Case Problem 2
+   Chester's Restaurant oatmeal
+
+   Author:    Kevin Morales
+   Date:      10/4/2021
+
+   Filename:         menu.xsd
+   Supporting Files: 
+-->
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+		   targetNamespace="http://example.com/chestershartland/menu"
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   xmlns:rcp="http://example.com/chestershartland/recipe">
+  <xs:import namespace="http://example.com/chestershartland/recipe"
+			 schemaLocation="recipe.xsd" />
+  <xs:element name="menuItem">
+	<xs:complexType>
+	  <xs:sequence>
+	    <xs:element type="xs:string" name="itemName" />
+		<xs:element type="xs:string" name="description" />
+		<xs:element type="xs:float" name="price" />
+		<xs:element type="xs:string" name="icon" maxOccurs="unbounded" minOccurs="0" />
+		<xs:element ref="rcp:recipe" />
+	  </xs:sequence>
+	</xs:complexType>
+  </xs:element>
+</xs:schema>
